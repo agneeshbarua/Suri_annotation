@@ -30,21 +30,10 @@ for ad_seq in file_with_adaptor:
 
 print(adaptor_list)
 
-#original_reads = SeqIO.parse(suri_file, 'fasta')
-		
-
-#for each_adaptor in adaptor_list:
-			#print(each_adaptor)
-			#original_reads = SeqIO.parse(suri_file, 'fasta')
-			#trimmed_reads = trim_adaptors(original_reads, each_adaptor)
-			#trimmed_file = SeqIO.write(trimmed_reads, 'trimmed_file4.fa', 'fasta')
-	
-#trimmed_file = SeqIO.write(trimmed_reads, 'trimmed_file4.fa', 'fasta')
-	#break
 
 
 original_reads = SeqIO.parse(suri_file, 'fasta')
-
+#Need to find a way to loop this for each_seq in adaptor_list
 trimmed_reads = trim_adaptors(original_reads, adaptor_list[0])
 trimmed_reads2 = trim_adaptors(trimmed_reads, adaptor_list[1])
 trimmed_reads3 = trim_adaptors(trimmed_reads2, adaptor_list[2])
@@ -72,23 +61,9 @@ trimmed_reads24 = trim_adaptors(trimmed_reads23, adaptor_list[23])
 trimmed_reads25 = trim_adaptors(trimmed_reads24, adaptor_list[24])
 trimmed_reads26 = trim_adaptors(trimmed_reads25, adaptor_list[25])
 
-
+#Final output of trimmed RNAseq in fasta format
 trimmed_file = SeqIO.write(trimmed_reads26, 'trimmed_suri_RNAseq.fa', 'fasta')
 
-#file = open('trimmed_file3.fa')
-#new_file = open('noline_trimmed.fa','w')
-
-#for line in file:
-	#if not line.startswith('>'):
-		#line = line.rstrip('\n')
-		#new_file.write(print(file))
-		
-
-
-#for line in file:
-	#line = line.rstrip()
-	#new_file.write(line)
-	#new_file = SeqIO.write(line,'noline_trimmed.fa', 'fasta')
 
 
 
